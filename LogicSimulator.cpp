@@ -111,6 +111,12 @@ bool isLCFFile(const string& path) {
 }
 
 bool LogicSimulator::load(const string& path){
+    // Delete previous file
+    iPins.clear();
+    circuit.clear();
+    oPins.clear();
+    NO = 0;
+
     ifstream in;
     in.open(path);
     if(in.fail() || !isLCFFile(path)) return false;
@@ -122,7 +128,6 @@ bool LogicSimulator::load(const string& path){
     for (int i = 0; i < NI; ++i) {
         iPins[i] = new iPin;
     }
-    
     circuit.resize(NG);
     vector<vector<float>> input(NG);
 
@@ -153,7 +158,7 @@ bool LogicSimulator::load(const string& path){
             }
         }
     }
-
+    
     // gate is't other input -> output
     for(int i = 0; i < connect.size();i++ ){
         if(connect[i] == false){
