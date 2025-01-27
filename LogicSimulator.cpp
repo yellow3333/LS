@@ -6,10 +6,7 @@
 #include "gateNot.h"
 #include "oPin.h"
 
-
 using namespace std;
-
-int NI=0, NG, NO = 0;
 
 LogicSimulator::LogicSimulator() {}
 
@@ -32,53 +29,23 @@ LogicSimulator::~LogicSimulator() {
 }
 
 
-void out_talbe_head(){
-    for(int j = 0; j < 3; j++){
-        for(int i = 0; i < NI; i++){
-            if(j == 0)cout << "i ";
-            else if(j == 1) cout << i+1 <<" ";
-            else cout<< "--";
-        }
-        if(j == 2)cout << "+";
-        else cout << "|";
-        for(int i = 0; i < NO; i++){
-            if(j == 0)cout << " o";
-            else if(j == 1) cout <<" " << i+1;
-            else cout<< "--";
-        }
-        cout<<"\n";
-    }
-    return ;
-}
-
-void LogicSimulator::out_table(const vector<int>& pins) const{
-
+vector<int> LogicSimulator::getSimulationResult(const vector<int>& pins){
+    vector<int> ans;
+    int NI = get_iPin_size();
     for(int i = 0; i < NI; i++){
-        cout<< pins[i]<<" ";
         iPins[i]->addinputPins(pins[i]);
     } 
-    cout << "|";
 
-    for(int i = 0; i < NO; i++){
-        cout <<" " << oPins[i]->getOutput() ;
+    for(int i = 0; i < get_oPin_size(); i++){
+        ans.push_back(oPins[i]->getOutput());
     } 
-    cout<<"\n";
-    return ;
-}
-
-void LogicSimulator::getSimulationResult(const vector<int>& pins){
-    printf("Simulation Result: \n");
-    out_talbe_head();
-    out_table(pins);
     
-    return ;
+    return ans;
 }
 
-void LogicSimulator::getTruthTable(){
-    int temp;
-    printf("Truth table: \n");
-    out_talbe_head();
-
+vector<vector<int>> LogicSimulator::getTruthTable(){
+    int temp, NI = get_iPin_size();
+    vector<vector<int>> ans;
     // decimal -> binary
     for(int i = 0; i < pow(2,NI); i++){
         vector<int> pins(NI,0);
@@ -87,14 +54,18 @@ void LogicSimulator::getTruthTable(){
                 pins[j] = temp%2;
                 temp/=2;
         }
-        out_table(pins);
+        ans.push_back(getSimulationResult(pins));
     }
     
-    return ;
+    return ans;
 }
 
 int LogicSimulator::get_iPin_size() const{
     return iPins.size();
+}
+
+int LogicSimulator::get_oPin_size() const{
+    return oPins.size();
 }
 
 Device* which_gate(int v){
@@ -115,7 +86,7 @@ bool LogicSimulator::load(const string& path){
     iPins.clear();
     circuit.clear();
     oPins.clear();
-    NO = 0;
+    int NI,NG,NO = 0;
 
     ifstream in;
     in.open(path);

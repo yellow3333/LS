@@ -15,10 +15,10 @@ class LogicSimulator{
 public:
     LogicSimulator();
     ~LogicSimulator();
-    void out_table(const vector<int>&) const;
-    void getSimulationResult(const vector<int>&);
-    void getTruthTable();
+    vector<int> getSimulationResult(const vector<int>&);
+    vector<vector<int>> getTruthTable();
     int get_iPin_size() const;
+    int get_oPin_size() const;
     bool load(const string&);
     
 

@@ -44,6 +44,41 @@ void TextUI::displayMenu(){
     processCommand();
 }
 
+void out_talbe_head(){
+    int NI = ls.get_iPin_size(), NO = ls.get_oPin_size();
+    for(int j = 0; j < 3; j++){
+        for(int i = 0; i < NI; i++){
+            if(j == 0)cout << "i ";
+            else if(j == 1) cout << i+1 <<" ";
+            else cout<< "--";
+        }
+        if(j == 2)cout << "+";
+        else cout << "|";
+        for(int i = 0; i < NO; i++){
+            if(j == 0)cout << " o";
+            else if(j == 1) cout <<" " << i+1;
+            else cout<< "--";
+        }
+        cout<<"\n";
+    }
+    return ;
+}
+
+void out_table(vector<int> pins,vector<int>& ans){
+    int NI = ls.get_iPin_size(), NO = ls.get_oPin_size();
+    for(int i = 0; i < NI; i++){
+        cout<< pins[i]<<" ";
+    } 
+    cout << "|";
+
+    for(int i = 0; i < NO; i++){
+        cout <<" " << ans[i] ;
+    } 
+    cout<<"\n";
+    return ;
+}
+
+
 void TextUI::processCommand(){
 
     int command;
@@ -61,11 +96,33 @@ void TextUI::processCommand(){
         exit(EXIT_SUCCESS) ;
     }else if(load_completed){// check the file is loaded
         if(command == 2){ // Simulation
-            vector<int> pins;
+        
+            vector<int> pins, ans;
             for(int i = 0; i < ls.get_iPin_size(); i++) pins.push_back(input_pin(i));
-            ls.getSimulationResult(pins);
+            ans = ls.getSimulationResult(pins);
+
+            printf("Simulation Result: \n");
+            out_talbe_head();
+            out_table(pins, ans);
+
+
         }else{ // Display truth table
-            ls.getTruthTable();
+            vector<vector<int>> ans;
+            ans = ls.getTruthTable();
+
+            printf("Truth table: \n");
+            out_talbe_head();
+            int temp, NI = ls.get_iPin_size();
+
+            for(int i = 0; i < pow(2,NI); i++){
+                vector<int> pins(NI,0);
+                temp = i;
+                for(int j=NI-1;j>=0;j--){
+                        pins[j] = temp%2;
+                        temp/=2;
+                }
+                out_table(pins, ans[i]);
+            }
         }
     }else {
         printf("Please load an lcf file, before using this operation.\n");
