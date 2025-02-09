@@ -9,23 +9,23 @@
 #include <cmath>
 #include <bitset>
 
-using namespace std;
-
 class LogicSimulator{
 public:
     LogicSimulator();
     ~LogicSimulator();
-    void out_table(const vector<int>&) const;
+    void outTableItem(const vector<int>&) const;
     void getSimulationResult(const vector<int>&);
     void getTruthTable();
-    int get_iPin_size() const;
+    int getInPinSize() const;
     bool load(const string&);
+    void clearLogic();
     
 
 private:
     vector<Device *> circuit;
     vector<Device *> iPins;
     vector<Device *> oPins;
+    int numOfIn, numOfGate, numOfOut;
 };
 
 #endif

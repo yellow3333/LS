@@ -8,8 +8,11 @@
 
 class TextUI{
 public:
-    void displayMenu();
-    void processCommand();
+    bool displayMenu();
+    bool processCommand();
+private:
+    bool loadCompleted = false;
+    LogicSimulator *ls = new LogicSimulator;
 };
 
 #endif
