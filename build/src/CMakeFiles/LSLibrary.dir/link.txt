@@ -1,0 +1,2 @@
+C:\mingw64\bin\ar.exe qc libLSLibrary.a CMakeFiles/LSLibrary.dir/Device.cpp.obj CMakeFiles/LSLibrary.dir/LogicSimulator.cpp.obj CMakeFiles/LSLibrary.dir/TextUI.cpp.obj CMakeFiles/LSLibrary.dir/gateAND.cpp.obj CMakeFiles/LSLibrary.dir/gateNot.cpp.obj CMakeFiles/LSLibrary.dir/gateOR.cpp.obj CMakeFiles/LSLibrary.dir/iPin.cpp.obj CMakeFiles/LSLibrary.dir/main.cpp.obj CMakeFiles/LSLibrary.dir/oPin.cpp.obj
+C:\mingw64\bin\ranlib.exe libLSLibrary.a

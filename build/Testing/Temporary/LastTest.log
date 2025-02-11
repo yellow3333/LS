@@ -1,0 +1,133 @@
+Start testing: Feb 11 13:31 台北標準時間
+----------------------------------------------------------
+1/3 Testing: LogicSimulatorTest
+1/3 Test: LogicSimulatorTest
+Command: "C:/Users/Ken/Code/HW/build/unitTest/testCase/LogicSimulatorTest.exe"
+Directory: C:/Users/Ken/Code/HW/build/unitTest/testCase
+"LogicSimulatorTest" start time: Feb 11 13:31 台北標準時間
+Output:
+----------------------------------------------------------
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from LogicSimulatorTest
+[ RUN      ] LogicSimulatorTest.Constructor
+[       OK ] LogicSimulatorTest.Constructor (0 ms)
+[ RUN      ] LogicSimulatorTest.LoadValidFile
+[       OK ] LogicSimulatorTest.LoadValidFile (0 ms)
+[ RUN      ] LogicSimulatorTest.LoadInvalidFile
+[       OK ] LogicSimulatorTest.LoadInvalidFile (0 ms)
+[ RUN      ] LogicSimulatorTest.LoadInvalidFormat
+[       OK ] LogicSimulatorTest.LoadInvalidFormat (0 ms)
+[ RUN      ] LogicSimulatorTest.ClearLogicOnEmptyCircuit
+[       OK ] LogicSimulatorTest.ClearLogicOnEmptyCircuit (0 ms)
+[ RUN      ] LogicSimulatorTest.ClearLogicAfterLoad
+Circuit: 4 input pins, 3 output pins and 5 gates
+[       OK ] LogicSimulatorTest.ClearLogicAfterLoad (0 ms)
+[ RUN      ] LogicSimulatorTest.OutTableHead
+[       OK ] LogicSimulatorTest.OutTableHead (1 ms)
+[ RUN      ] LogicSimulatorTest.OutTableItem
+[       OK ] LogicSimulatorTest.OutTableItem (0 ms)
+[ RUN      ] LogicSimulatorTest.GetSimulationResult
+[       OK ] LogicSimulatorTest.GetSimulationResult (0 ms)
+[ RUN      ] LogicSimulatorTest.GetTruthTable
+[       OK ] LogicSimulatorTest.GetTruthTable (0 ms)
+[----------] 10 tests from LogicSimulatorTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"LogicSimulatorTest" end time: Feb 11 13:31 台北標準時間
+"LogicSimulatorTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: TextUITest
+2/3 Test: TextUITest
+Command: "C:/Users/Ken/Code/HW/build/unitTest/testCase/TextUITest.exe"
+Directory: C:/Users/Ken/Code/HW/build/unitTest/testCase
+"TextUITest" start time: Feb 11 13:31 台北標準時間
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Ken\Code\HW\unitTest\googletest\googletest\src\gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from TextUITest
+[ RUN      ] TextUITest.InputDigitValid
+[       OK ] TextUITest.InputDigitValid (0 ms)
+[ RUN      ] TextUITest.InputDigitInvalidString
+[       OK ] TextUITest.InputDigitInvalidString (0 ms)
+[ RUN      ] TextUITest.InputDigitInvalidNotDigit
+[       OK ] TextUITest.InputDigitInvalidNotDigit (0 ms)
+[ RUN      ] TextUITest.InputServeCommandValid
+Command:[       OK ] TextUITest.InputServeCommandValid (1 ms)
+[ RUN      ] TextUITest.InputServeCommandInvalid
+Command:command must be 1 to 4
+
+Command:command must be 1 to 4
+
+Command:[       OK ] TextUITest.InputServeCommandInvalid (0 ms)
+[ RUN      ] TextUITest.InputServePinValid
+Please key in the value of input pin 1: [       OK ] TextUITest.InputServePinValid (0 ms)
+[ RUN      ] TextUITest.InputServePinInvalid
+Please key in the value of input pin 1: The value of input pin must be 0/1
+Please key in the value of input pin 1: [       OK ] TextUITest.InputServePinInvalid (0 ms)
+[ RUN      ] TextUITest.DisplayMenuOutput
+[       OK ] TextUITest.DisplayMenuOutput (0 ms)
+[ RUN      ] TextUITest.ProcessCommandLoadInvalidFilel
+[       OK ] TextUITest.ProcessCommandLoadInvalidFilel (0 ms)
+[ RUN      ] TextUITest.ProcessCommandFailSimulation
+[       OK ] TextUITest.ProcessCommandFailSimulation (0 ms)
+[ RUN      ] TextUITest.ProcessCommandFailDisplayTruthTable
+[       OK ] TextUITest.ProcessCommandFailDisplayTruthTable (0 ms)
+[ RUN      ] TextUITest.ProcessCommandExit
+[       OK ] TextUITest.ProcessCommandExit (0 ms)
+[----------] 12 tests from TextUITest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 12 tests.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"TextUITest" end time: Feb 11 13:31 台北標準時間
+"TextUITest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: DeviceTest
+3/3 Test: DeviceTest
+Command: "C:/Users/Ken/Code/HW/build/unitTest/testCase/DeviceTest.exe"
+Directory: C:/Users/Ken/Code/HW/build/unitTest/testCase
+"DeviceTest" start time: Feb 11 13:31 台北標準時間
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from DeviceTEST
+[ RUN      ] DeviceTEST.IPinGetOutput
+[       OK ] DeviceTEST.IPinGetOutput (0 ms)
+[ RUN      ] DeviceTEST.GateNotOutput
+[       OK ] DeviceTEST.GateNotOutput (0 ms)
+[ RUN      ] DeviceTEST.GateANDOutput
+[       OK ] DeviceTEST.GateANDOutput (0 ms)
+[ RUN      ] DeviceTEST.GateOROutput
+[       OK ] DeviceTEST.GateOROutput (0 ms)
+[ RUN      ] DeviceTEST.OPinOutput
+[       OK ] DeviceTEST.OPinOutput (0 ms)
+[----------] 5 tests from DeviceTEST (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"DeviceTest" end time: Feb 11 13:31 台北標準時間
+"DeviceTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 11 13:31 台北標準時間

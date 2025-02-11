@@ -1,0 +1,4 @@
+LogicSimulatorTest 1 0.104641
+TextUITest 1 0.103773
+DeviceTest 1 0.102621
+---

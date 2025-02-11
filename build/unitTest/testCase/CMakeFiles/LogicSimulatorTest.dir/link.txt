@@ -1,0 +1,3 @@
+C:\cmake-3.31.5-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\LogicSimulatorTest.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\LogicSimulatorTest.dir/objects.a @CMakeFiles\LogicSimulatorTest.dir\objects1.rsp
+C:\mingw64\bin\c++.exe -Wl,--whole-archive CMakeFiles\LogicSimulatorTest.dir/objects.a -Wl,--no-whole-archive -o LogicSimulatorTest.exe -Wl,--out-implib,libLogicSimulatorTest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LogicSimulatorTest.dir\linkLibs.rsp
